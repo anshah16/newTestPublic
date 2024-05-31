@@ -1,0 +1,44 @@
+{
+    "groupName" : "Group1",
+    "expressions": [
+        {
+            "name" : "a",
+            "expressionType" : "DIRECT",
+            "expression" : "10",
+            "dependencies" : [] // result will be 10
+        },
+        {
+            "name" : "b",
+            "expressionType" : "RS_EXPRESSION",
+            "expression" : "${a} + 10", // result will be "(10 + 10) RS"
+            "dependencies" : ["a"] 
+        },
+        {
+            "name" : "c",
+            "expressionType" : "DOLLAR_EXPRESSION",
+            "expression" : "${a} + 10", // result will be "(10 + 10) $"
+            "dependencies" : ["a"]
+        },
+        {
+            "name" : "d",
+            "expressionType" : "DIRECT",
+            "expression" : "10",
+            "dependencies" : []
+        }
+    ]
+},
+{
+    "groupName" : "Group2",
+    "expressions": [
+        {
+            "name" : "a",
+            "expressionType" : "DIRECT",
+            "expression" : "10",
+            "dependencies" : []
+        }
+    ]
+},
+{
+    "groupName": "Group3",
+    "expressions": []
+}
